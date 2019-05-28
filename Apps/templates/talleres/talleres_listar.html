@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block top %}
+<h2>Listado de Talleres</h2>
+<p>
+    <a class="btn btn-success" href="../talleres/crear">Crear taller</a>
+</p>
+{% endblock %}
+
+{% block body %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Nombre</td>
+            <td>Detalle</td>
+            <td>Horas</td>
+            <td>Cupos</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in lista %}
+        <tr>
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.detalle }}</td>
+            <td>{{ item.horas }}</td>
+            <td>{{ item.cupos }}</td>
+            <td>
+                <a href="{% url 'talleres_editar' id=item.id %}">Editar</a>
+            </td>
+            <td>
+                <a href="{% url 'talleres_eliminar' id=item.id %}">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block top %}
+<h2>Nuevo Postulante</h2>
+{% endblock %}
+
+{% block body %}
+<form action="" method="post">
+    {% csrf_token %}
+    {{ postulacion.as_p }}
+    <button class="btn btn-primary" type="submit">
+        Grabar
+    </button>
+</form>
+<p>
+    <a class="btn btn-success" href="{% url 'postulantes_listar' %}">Cancelar</a>
+</p>
+{% endblock %}

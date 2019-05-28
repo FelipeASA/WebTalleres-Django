@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block top %}
+<h2>Actualizar Taller</h2>
+{% endblock %}
+
+{% block body %}
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p>
+        <button class="btn btn-primary" type="submit">Grabar</button>
+    </p>
+</form>
+<p>
+    <a class="btn btn-success" href="{% url 'talleres_listar' %}">Cancelar</a>
+</p>
+{% endblock %}

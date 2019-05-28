@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block top %}
+<h2>Borrar postulacion</h2>
+{% endblock %}
+
+{% block body %}
+<h2>Confirmar borrar {{ p.nombre }}?</h2>
+<form action="" method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger" type="submit">
+        Borrar
+    </button>
+    <a class="btn btn-success" href="{% url 'postulantes_listar' %}">Cancelar</a>
+</form>
+{% endblock %}
